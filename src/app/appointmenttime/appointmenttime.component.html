@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-md-5">
+
+        <h3>Appointment Time</h3>
+        <form [formGroup]="AppointmentTimeForm" (ngSubmit)="saveAppointment()">
+
+            <div class="form-group">
+                <label for="dropdown">Select Organization</label>
+                <select id="dropdown" formControlName="organizationId" (change)="onAppointmentTimeChange($event)">
+                    <option *ngFor="let organization of organizations" [value]="organization.organizationId">
+                        {{organization.name}}</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="dropdown">Select Time</label>
+                <select id="dropdown" formControlName="appointmentId">
+                    <option *ngFor="let appointment of appointments" [value]="appointment.appointmentId">
+                        {{appointment.starttime}} {{'-'}} {{appointment.endtime}}</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" >Create</button>
+
+        </form>
+    </div>
+
+    <div class="col-md-7">
+        <h3>Appointment Check</h3>
+        <form [formGroup]="AppointmentCheckForm" (change)="getAppointmentCheck()">
+
+            <div class="form-group">
+                <label for="tcNo">TC No</label>
+                <input type="text" class="form-control" id="tcNo" formControlName="tcNo">
+            </div>
+
+            <div class="form-group">
+                <label for="firstName">FirstName</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">LastName</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" formControlName="age">
+            </div>
+        </form>
+
+    </div>
+
+</div>

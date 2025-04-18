@@ -1,0 +1,124 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Update Patient</h3>
+    <form [formGroup]="updateAddForm" (submit)="onSubmit()" >
+  
+      <div class="form-group">
+        <label for="tcNo">TC No</label>
+        <input type="text" class="form-control" id="tcNo" formControlName="tcNo" [value]="patient.tcNo">
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName" [value]="patient.firstName">
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" [value]="patient.lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="birthDate">BirthDate</label>
+        <input type="date" class="form-control" id="birthDate" formControlName="birthDate" [value]="patient.birthDate">
+      </div>
+  
+      <div class="form-group">
+        <label for="birthPlace">Birth Place</label>
+        <input type="text" class="form-control" id="birthPlace" formControlName="birthPlace" [value]="patient.birthPlace">
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" formControlName="age" [value]="updateAddForm.get('age')?.value">
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" id="gender" formControlName="gender" [value]="patient.age">
+      </div> -->
+
+      <div class="form-group">
+        <label for="dropdown">Gender</label>
+        <select class="form-control" id="dropdown" formControlName="gender">
+          <option value="Erkek">Erkek</option>
+          <option value="Kadın">Kadın</option>
+        </select>
+      </div>
+
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" formControlName="address" [value]="patient.address">
+      </div>
+
+      <form [formGroup]="patientphoneAddForm">
+        <div class="form-group">
+          <label for="mobilephone">Mobile Phone</label>
+          <input type="text" class="form-control" id="mobilephone" formControlName="mobilephone" >
+        </div>
+  
+        <div class="form-group">
+          <label for="homephone">Home Phone</label>
+          <input type="text" class="form-control" id="homephone" formControlName="homephone">
+        </div>
+      </form>
+
+      
+  
+      <div class="form-group">
+        <label for="dropdown">Select City:</label>
+        <select id="dropdown" formControlName="city" (change)="onCityChange($event)">
+          <!-- <p-dropdown [options]="cities" optionLabel="name" optionValue="mervancityid" placeholder="Seçiniz"
+          formControlName="city"></p-dropdown> -->
+          <!-- <option value="" disabled>Select a city</option> -->
+          <option *ngFor="let city of cities" [value]="city.mervancityid">{{ city.name }}</option>
+        </select>
+      </div>
+    
+      <div class="form-group">
+        <label for="district">Select District:</label>
+        <select id="district" formControlName="district" >
+          <option value="" disabled>Select a district</option>
+          <option *ngFor="let district of districts" [value]="district.mervandistrictid">{{ district.name }}</option>
+        </select>
+      </div>
+  
+      <button class="btn btn-primary" type="submit">Update</button>
+  
+    </form>
+  </div>
+  <!-- <div class="col-md-6 offset-md-3" >
+    <h3>Update Patient</h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+    
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="firstName"
+                [(ngModel)] = "patient.firstName" name="firstName">
+        </div>
+    
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="lastName"
+                [(ngModel)] = "patient.lastName" name="lastName">
+        </div>
+    
+        <div class="form-group">
+            <label>Age</label>
+            <input type="text" class="form-control" id="age"
+                [(ngModel)] = "patient.age" name="age">
+        </div>
+    
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" id="address"
+                [(ngModel)] = "patient.address" name="address">
+        </div>
+
+
+    
+        <button class="btn btn-primary" type="submit">Update</button>
+    
+    </form>
+    </div> -->
