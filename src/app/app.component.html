@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="patients" routerLinkActive="active" class="nav-link">Patient List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="create-patient" routerLinkActive="active" class="nav-link">Add Patient</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="admission-patient" routerLinkActive="active" class="nav-link">Patient Admission</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="appointment-patient" routerLinkActive="active" class="nav-link">Appointment Admission</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="appointment-time" routerLinkActive="active" class="nav-link">Appointment Time</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="appointment-list" routerLinkActive="active" class="nav-link">Appointment List</a>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a routerLink="check" routerLinkActive="active" class="nav-link">Patient Check</a>
+    </li> -->
+  </ul>
+</nav>
+
+
+<div style="text-align: center;">
+  <img src="/assets/images/erc.jpeg" alt="Example Image" class="logo-icon" />
+</div>
+
+<h1 class="text-center">{{title}}</h1>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<br>
+<br>
+
+<footer class="footer">
+  <div class="container" >
+    <span>ERC Hospital Project 2024</span>
+  </div>
+</footer>
